@@ -1,28 +1,44 @@
 
-<h1>Futbol</h1>
+<h1>Futbul</h1>
 
 <div>
   <h2>Equipos</h2>
-  <ol>
+  <ul *ngFor="let equipo of equipos">
     <li>
-      <div>
-        <h3>Nombre:</h3>
-        <h3>Ciudad:</h3>
-        <h3>Cantidad de copas internacionales:</h3>
-      </div>
+      <app-equipo-item [equipo]="equipo"></app-equipo-item>
     </li>
-  </ol>
+  </ul>
 </div>
 <div>
   <h2>Jugadores</h2>
-  <ol>
+  <ul *ngFor="let jugador of jugadores">
     <li>
-      <div>
-        <h3>Nombres:</h3>
-        <h3>Apellidos:</h3>
-        <h3>Número:</h3>
-        <h3>Equipo:</h3>
-      </div>
+      <app-jugador-item [jugador]="jugador"></app-jugador-item>
     </li>
-  </ol>
+  </ul>
+</div>
+<h2>Crear Equipos</h2>
+<div>
+  <p>Nombre</p>
+  <input id="nom-equipo" type="text" />
+  <p>ciudad</p>
+  <input id="ciu-equipo" type="text" />
+  <p>Cantidad de copas internacionales</p>
+  <input id="can-equipo" type="number" />
+  <br>
+  <button (click)="crearEquipo()">Crear</button>
+</div>
+<br>
+<h2>Crear Jugadores</h2>
+<div>
+  <p>Nombres</p>
+  <input id="nom-jugador" type="text" />
+  <p>Apellidos</p>
+  <input id="ape-jugador" type="text" />
+  <p>Numero</p>
+  <input id="num-jugador" type="number" />
+  <p>Equipo</p>
+  <input id="equ-jugador" type="number" />
+  <br>
+  <button (click)="crearJugador()">Crear</button>
 </div>
